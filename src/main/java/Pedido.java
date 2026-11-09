@@ -74,27 +74,55 @@ public class Pedido {
         return estado == EstadoPedido.CONFIRMADO || estado == EstadoPedido.ENTREGADO;
     }
 
-    public String getCodigo() { return codigo; }
-    public void setCodigo(String codigo) { this.codigo = codigo; }
+    public String getCodigo() {
+        return codigo;
+    }
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
 
-    public LocalDate getFecha() { return fecha; }
-    public void setFecha(LocalDate fecha) { this.fecha = fecha; }
+    public LocalDate getFecha() {
+        return fecha;
+    }
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
+    }
 
-    public Cliente getCliente() { return cliente; }
-    public void setCliente(Cliente cliente) { this.cliente = cliente; }
+    public Cliente getCliente() {
+        return cliente;
+    }
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
 
-    public ModalidadEntrega getModalidad() { return modalidad; }
-    public void setModalidad(ModalidadEntrega modalidad) { this.modalidad = modalidad; }
+    public ModalidadEntrega getModalidad() {
+        return modalidad;
+    }
+    public void setModalidad(ModalidadEntrega modalidad) {
+        this.modalidad = modalidad;
+    }
 
-    public EstadoPedido getEstado() { return estado; }
+    public EstadoPedido getEstado() {
+        return estado;
+    }
 
-    public List<DetallePedido> getDetalles() { return detalles; }
+    public List<DetallePedido> getDetalles() {
+        return detalles;
+    }
 
-    public ServicioDomicilio getServicioDomicilio() { return servicioDomicilio; }
-    public void setServicioDomicilio(ServicioDomicilio servicioDomicilio) { this.servicioDomicilio = servicioDomicilio; }
+    public ServicioDomicilio getServicioDomicilio() {
+        return servicioDomicilio;
+    }
+    public void setServicioDomicilio(ServicioDomicilio servicioDomicilio) {
+        this.servicioDomicilio = servicioDomicilio;
+    }
 
-    public double getDistanciaKm() { return distanciaKm; }
-    public void setDistanciaKm(double distanciaKm) { this.distanciaKm = distanciaKm; }
+    public double getDistanciaKm() {
+        return distanciaKm;
+    }
+    public void setDistanciaKm(double distanciaKm) {
+        this.distanciaKm = distanciaKm;
+    }
 
     @Override
     public String toString() {
