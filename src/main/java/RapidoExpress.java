@@ -1,4 +1,4 @@
-public class RapidoExpress {
+public class RapidoExpress implements ServicioDomicilio{
     private double tarifaBase;
     private double valorPorKm;
     private double distanciaMaxima;
@@ -30,11 +30,19 @@ public class RapidoExpress {
     }
 
     public void setDistanciaMaxima(double distanciaMaxima) {
+
         this.distanciaMaxima = distanciaMaxima;
     }
-    public boolean aceptarServicio(double distancia) {
-        return distancia <= distanciaMaxima;
+    @Override
+    public String getNombre() {
+        return "RapidoExpress";
     }
+    @Override
+    public boolean aceptaServicio(double distancia) {
+
+        return distancia >=0 && distancia<= distanciaMaxima;
+    }
+    @Override
     public double calcularCosto(double distancia){
         return tarifaBase+valorPorKm*distancia;
     }

@@ -35,7 +35,7 @@ public class Postre extends Producto {
     }
     @Override
     public double calcularPrecioVenta() {
-        double precio = getPrecioBase()*1.5;
+        double precio = getPrecioBase()*1.15;
         if (requiereRefrigeracion) {
             precio+=(getPrecioBase()*1.05);
         }

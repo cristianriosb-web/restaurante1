@@ -1,4 +1,4 @@
-public class EntregaSegura {
+public class EntregaSegura implements ServicioDomicilio{
     private double tarifaBase;
     private double valorPorKm;
     private double distanciaMaxima;
@@ -52,12 +52,19 @@ public class EntregaSegura {
     public void setTarifaBase(double tarifaBase) {
         this.tarifaBase = tarifaBase;
     }
-    public boolean aceptarServicio(double distancia){
+    @Override
+    public String getNombre() {
+        return "EntregaSegura";
+    }
+    @Override
+    public boolean aceptaServicio(double distancia){
         return distancia<=distanciaMaxima;
     }
+
+    @Override
     public double calcularCosto(double distancia){
         double precio=tarifaBase;
-        if(aceptarServicio(distancia)){
+        if(aceptaServicio(distancia)){
             precio+=valorPorKm*distancia;
         }
         return precio;
