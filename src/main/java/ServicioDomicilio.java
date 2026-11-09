@@ -1,0 +1,2 @@
+public interface ServicioDomicilio {
+}
