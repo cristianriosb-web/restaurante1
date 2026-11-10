@@ -16,7 +16,7 @@ class RestauranteTest {
     void setUp() {
         restaurante = new Restaurante("Sabor & Tradición", "900123456-7", "Armenia");
         cliente = new Cliente("Ana", "1001", "300", "ana@correo.com", "Calle 1");
-        plato = new PlatoFuerte(0.90, "Bandeja", "Típica", 20000, 30, 500, TipoPreparacion.FRITO, true);
+        plato = new PlatoFuerte("P01", "Bandeja", "Típica", 20000, 30, 500, TipoPreparacion.FRITO, true);
         bebida = new Bebida("B01", "Limonada", "Natural", 5000, 5, 500, 5, true, false);
         restaurante.registrarCliente(cliente);
         restaurante.registrarProducto(plato);
@@ -37,7 +37,7 @@ class RestauranteTest {
 
     @Test
     void noConfirmaPedidoConProductoRechazado() {
-        PlatoFuerte malo = new PlatoFuerte(0.98, "Lechona", "x", 20000, 90, 950, TipoPreparacion.HORNEADO, false);
+        PlatoFuerte malo = new PlatoFuerte("P02", "Lechona", "x", 20000, 90, 950, TipoPreparacion.HORNEADO, false);
         restaurante.registrarProducto(malo);
         Pedido p = new Pedido("PED1", LocalDate.now(), cliente, ModalidadEntrega.RESTAURANTE,
                 EstadoPedido.PENDIENTE, null, 0);

@@ -11,7 +11,7 @@ class DetallePedidoTest {
 
     @BeforeEach
     void setUp() {
-        plato = new PlatoFuerte(0.90, "Bandeja", "Típica", 20000, 30, 500, TipoPreparacion.FRITO, true);
+        plato = new PlatoFuerte("P01", "Bandeja", "Típica", 20000, 30, 500, TipoPreparacion.FRITO, true);
         bebida = new Bebida("B01", "Limonada", "Natural", 5000, 5, 500, 5, true, false);
         postre = new Postre("D01", "Natas", "Tradicional", 8000, 15, 200, 4, true);
     }

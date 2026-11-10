@@ -1,52 +1,42 @@
-public class PlatoFuerte extends Producto{
+public class PlatoFuerte extends Producto {
+
     private double pesoGramos;
     private TipoPreparacion tipoPreparacion;
     private boolean coccionAprobada;
 
-    public PlatoFuerte(double pesoGramos, TipoPreparacion tipoPreparacion, boolean coccionAprobada, double precioBase, int tiempoPreparacion, String codigo, String nombre, String descripcion) {
+    public PlatoFuerte(String codigo, String nombre, String descripcion, double precioBase,
+                       int tiempoPreparacion, double pesoGramos,
+                       TipoPreparacion tipoPreparacion, boolean coccionAprobada) {
         super(codigo, nombre, descripcion, precioBase, tiempoPreparacion);
         this.pesoGramos = pesoGramos;
         this.tipoPreparacion = tipoPreparacion;
         this.coccionAprobada = coccionAprobada;
     }
 
-    public PlatoFuerte(double pesoGramos, String bandeja, String típica, int precioBase, int tiempoPreparacion, int i, TipoPreparacion tipoPreparacion, boolean b) {
-        super(pesoGramos, bandeja, típica, precioBase, tiempoPreparacion, i, tipoPreparacion, b);
-    }
-
-    public double getPesoGramos() {
-        return pesoGramos;
-    }
-
-    public void setPesoGramos(double pesoGramos) {
-        this.pesoGramos = pesoGramos;
-    }
-
-    public TipoPreparacion getTipoPreparacion() {
-        return tipoPreparacion;
-    }
-
-    public void setTipoPreparacion(TipoPreparacion tipoPreparacion) {
-        this.tipoPreparacion = tipoPreparacion;
-    }
-
-    public boolean isCoccionAprobada() {
-        return coccionAprobada;
-    }
-
-    public void setCoccionAprobada(boolean coccionAprovada) {
-        this.coccionAprobada = coccionAprovada;
-    }
     @Override
     public double calcularPrecioVenta() {
-        return getPrecioBase() * 1.2;
+        return getPrecioBase() * 1.20;
     }
+
     @Override
     public boolean cumpleCalidad() {
-       if(pesoGramos<=900 && pesoGramos>=200&& getTiempoPreparacion()>=10 && getTiempoPreparacion()<=60 && coccionAprobada) {
-           return true;
-       }else{
-           return false;
-       }
+        return pesoGramos >= 200 && pesoGramos <= 900
+                && getTiempoPreparacion() >= 10 && getTiempoPreparacion() <= 60
+                && coccionAprobada;
+    }
+
+    public double getPesoGramos() { return pesoGramos; }
+    public void setPesoGramos(double pesoGramos) { this.pesoGramos = pesoGramos; }
+
+    public TipoPreparacion getTipoPreparacion() { return tipoPreparacion; }
+    public void setTipoPreparacion(TipoPreparacion tipoPreparacion) { this.tipoPreparacion = tipoPreparacion; }
+
+    public boolean isCoccionAprobada() { return coccionAprobada; }
+    public void setCoccionAprobada(boolean coccionAprobada) { this.coccionAprobada = coccionAprobada; }
+
+    @Override
+    public String toString() {
+        return super.toString() + String.format(" | %.0f g, %s, cocción %s",
+                pesoGramos, tipoPreparacion, coccionAprobada ? "aprobada" : "NO aprobada");
     }
 }

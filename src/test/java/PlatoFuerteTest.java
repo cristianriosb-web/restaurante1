@@ -9,7 +9,7 @@ class PlatoFuerteTest {
 
     @BeforeEach
     void setUp() {
-        plato = new PlatoFuerte(0.90, "Bandeja paisa", "Típica", 20000, 30, 500,
+        plato = new PlatoFuerte("P01", "Bandeja paisa", "Típica", 20000, 30, 500,
                 TipoPreparacion.FRITO, true);
     }
 
