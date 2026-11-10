@@ -10,6 +10,10 @@ public class PlatoFuerte extends Producto{
         this.coccionAprobada = coccionAprobada;
     }
 
+    public PlatoFuerte(double pesoGramos, String bandeja, String típica, int precioBase, int tiempoPreparacion, int i, TipoPreparacion tipoPreparacion, boolean b) {
+        super(pesoGramos, bandeja, típica, precioBase, tiempoPreparacion, i, tipoPreparacion, b);
+    }
+
     public double getPesoGramos() {
         return pesoGramos;
     }

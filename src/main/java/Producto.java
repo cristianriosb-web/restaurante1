@@ -15,6 +15,9 @@ public abstract class Producto {
         this.tiempoPreparacion = tiempoPreparacion;
     }
 
+    public Producto(double pesoGramos, String bandeja, String típica, int precioBase, int tiempoPreparacion, int i, TipoPreparacion tipoPreparacion, boolean b) {
+    }
+
     public abstract double calcularPrecioVenta();
 
     public abstract boolean cumpleCalidad();
